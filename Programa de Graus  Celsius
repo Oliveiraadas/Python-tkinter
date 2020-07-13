@@ -1,0 +1,31 @@
+from tkinter import*
+
+#funcoes
+#c = (F-32) * 5/9
+
+def calcular():
+    F = float(textbox1.get())
+    C = (F - 32) * 5/9
+    final.set(str(round(C,1)) + ' Graus Celsius')
+#GUI
+root = Tk()
+root.title('App')
+
+final = StringVar()
+
+#widgets
+label1=Label(root, text='Graus Fahrenheit:')
+textbox1=Entry(root)
+button1=Button(root, text='Calcular', command=calcular)
+label_resultado=Label(root, textvariable=final)
+
+
+
+#layout
+label1.grid()
+textbox1.grid()
+button1.grid()
+label_resultado.grid()
+label1.grid()
+
+root.mainloop()
